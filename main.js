@@ -4,6 +4,7 @@ const config = require('./config.json');
 
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
+	client.user.setActivity("!help", { type: "PLAYING"})
 });
 
 client.on("message" , msg => {
@@ -57,6 +58,11 @@ client.on("message" , msg => {
 }
 })
 client.on("message" , msg => {
+	if (msg.content === '!invite'){
+		msg.channel.send('https://discord.com/oauth2/authorize?client_id=870516119604183091&permissions=75856&scope=bot')
+}
+})
+client.on("message" , msg => {
 	if (msg.content === '!help'){
 		const exampleEmbed = new Discord.MessageEmbed()
 		.setColor('#E74C3C')
@@ -65,6 +71,7 @@ client.on("message" , msg => {
         .addField('`!price`', 'Product price')
 		.addField('`!website`', 'Kumi website')
 		.addField('`!github`', 'Kumi bot github')
+		.addField('`!invite`', 'Kumi invite link')
 		.addField('`!help`', 'Shiw this command')
 		.setTimestamp()
 		.setFooter('Kumi');
