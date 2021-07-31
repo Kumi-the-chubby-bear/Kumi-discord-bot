@@ -12,11 +12,8 @@ client.on("message" , msg => {
         const exampleEmbed = new Discord.MessageEmbed()
         .setColor('#E74C3C')
         .setTitle('Product List')
-        .addField('<Product name>', 'Description')
-        .addField('<Product name>', 'Description')
-        .addField('<Product name>', 'Description')
-        .addField('<Product name>', 'Description')
-        .addField('<Product name>', 'Description')
+        .addField('คุมิไรซ์บัตเตอร์บาล์ม', 'คุมิไรซ์บัตเตอร์บาล์ม สำหรับทาลดอาการคัน แมลงกัดต่อย ผลิตจากน้ำมันข้าว พร้อมด้วยสารสกัดจากลาเวนเดอร์ เปลือกกล้วยและวิตามิน')
+        .addField('สติ๊กเกอร์กันยุงคุมิ', 'สติ๊กเกอร์กันยุงคุมิ 3 ส่วนผสมไล่ยุง 24 ชั่วโมง ปกป้องลูกน้อยได้หายห่วง ธรรมชาติ 100% ไม่มี DEET ไม่มีสารเคมี')
         .setTimestamp()
         .setFooter('Kumi');
     
@@ -29,11 +26,8 @@ client.on("message" , msg => {
 		const exampleEmbed = new Discord.MessageEmbed()
 		.setColor('#E74C3C')
 		.setTitle('Price List')
-        .addField('<Product name>', 'Price')
-        .addField('<Product name>', 'Price')
-        .addField('<Product name>', 'Price')
-        .addField('<Product name>', 'Price')
-        .addField('<Product name>', 'Price')
+        .addField('คุมิไรซ์บัตเตอร์บาล์ม', '฿220.00')
+        .addField('สติ๊กเกอร์กันยุงคุมิ', '฿130.00')
 		.setTimestamp()
 		.setFooter('Kumi');
 		
@@ -42,14 +36,7 @@ client.on("message" , msg => {
 		})
 		client.on("message" , msg => {
 			if (msg.content === '!website'){
-				const exampleEmbed = new Discord.MessageEmbed()
-				.setColor('#E74C3C')
-				.setTitle('Kumi website')
-				.setDescription('<website url>')
-				.setTimestamp()
-				.setFooter('Kumi');
-			
-				msg.channel.send(exampleEmbed);
+				msg.channel.send('<Webite url>')
 			}
 			})
 client.on("message" , msg => {
@@ -69,6 +56,7 @@ client.on("message" , msg => {
 		.setTitle('Kumi help')
 		.addField('`!product`', 'Product list')
         .addField('`!price`', 'Product price')
+		.addField('`!order`', 'How to order?')
 		.addField('`!website`', 'Kumi website')
 		.addField('`!github`', 'Kumi bot github')
 		.addField('`!invite`', 'Kumi invite link')
@@ -79,6 +67,18 @@ client.on("message" , msg => {
 		msg.channel.send(exampleEmbed);
 	}
 	})
-	
+	client.on("message" , msg => {
+		if (msg.content === '!order'){
+			const exampleEmbed = new Discord.MessageEmbed()
+			.setColor('#E74C3C')
+			.setTitle('Price List')
+			.addField('Facebook page', 'https://www.facebook.com/KumiTheChubbyBear/')
+			.addField('Line shop', '<Line shop url>')
+			.setTimestamp()
+			.setFooter('Kumi');
+			
+			msg.channel.send(exampleEmbed);
+			}
+			})	
 client.login(config.token)
 
